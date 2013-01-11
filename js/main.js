@@ -2,7 +2,7 @@ $(function()
 {
 	var touch = Modernizr.touch;
 	var gps = navigator.geolocation;
-	var defaultLat = 42.37;
+	var defaultLat = 42.39;
 	var defaultLng =  -71.05977;
 	var locationMarker = null;
 	var eventSelected = false;
@@ -20,7 +20,7 @@ $(function()
 		lat:defaultLat,
 		lng:defaultLng,
 		styles:'grey',
-		zoom:11
+		zoom:12
 	});
 	// Get today's date
 	var d = new Date();
