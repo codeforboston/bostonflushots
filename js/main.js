@@ -2,7 +2,7 @@ $(function()
 {
 	var touch = Modernizr.touch;
 	var gps = navigator.geolocation;
-	var defaultLat = 42.35843;
+	var defaultLat = 42.37;
 	var defaultLng =  -71.05977;
 	var locationMarker = null;
 	var eventSelected = false;
