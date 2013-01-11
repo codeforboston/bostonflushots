@@ -20,7 +20,7 @@ $(function()
 		lat:defaultLat,
 		lng:defaultLng,
 		styles:'grey',
-		zoom:12
+		zoom:11
 	});
 	// Get today's date
 	var d = new Date();
