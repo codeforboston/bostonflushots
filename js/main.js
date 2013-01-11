@@ -41,7 +41,6 @@ $(function()
 	var FluShotsLayer = new TkMapFusionLayer({
 		geo:'Location',
 		map:Map.Map,
-		//tableid:'5313521',
 		tableid:'1lCrp_Ee2AcV-fieOYf8Q2sHcDLesikoe42r_M6A',
 		where:defaultWhere
 	});
@@ -228,7 +227,7 @@ $(function()
 		$('.day').removeClass('marked active');
 		var geocoder = new google.maps.Geocoder();
 		geocoder.geocode(
-			{address:$('#location').val()+', Chicago, IL'},
+			{address:$('#location').val()+', Boston, MA'},
 			function(results, status)
 			{
 				if (status == google.maps.GeocoderStatus.OK)
@@ -442,7 +441,7 @@ $(function()
 		$('#directions').html('');
 		DirectionsRenderer.setPanel(document.getElementById('directions'));
 		var RouteRequest = {
-			origin : $('#location').val()+', Chicago, IL',
+			origin : $('#location').val()+', Boston, MA',
 			destination : lastFluShotLocationClicked.Location.value,
 			transitOptions : transitOptions,
 
@@ -473,11 +472,11 @@ $(function()
 				DirectionsRenderer.setDirections(Response);
 				if(buttonClicked == 'ctarouteevent')
 				{
-					$('#timetoleave').html('<b>CTA/Metra Directions</b><br>Leave by '+Response.routes[transitroute].legs[0].departure_time.text+' on '+lastFluShotLocationClicked.Date.value+'</p>');
+					$('#timetoleave').html('<b>MBTA Directions</b><br>Leave by '+Response.routes[transitroute].legs[0].departure_time.text+' on '+lastFluShotLocationClicked.Date.value+'</p>');
 				}
 				else
 				{
-					$('#timetoleave').html('<b>CTA/Metra Directions</b><br>Leave by '+Response.routes[transitroute].legs[0].departure_time.text+'</p>');
+					$('#timetoleave').html('<b>MBTA Directions</b><br>Leave by '+Response.routes[transitroute].legs[0].departure_time.text+'</p>');
 				}
 			}
 			else
@@ -488,8 +487,8 @@ $(function()
 				}
 				$('#theform').hide(750);
 				$('#span-cta').show(750);
-				$('#timetoleave').html('<p class="lead">CTA/Metra Directions</p>');
-				$('#directions').html('<p><b>We are sorry. We cannot route you to this clinic.</b> It is likely that the CTA or Metra has not released schedule times for the date of your travel yet. Please check back soon.</p>');
+				$('#timetoleave').html('<p class="lead">MBTA Directions</p>');
+				$('#directions').html('<p><b>We are sorry. We cannot route you to this clinic.</b> It is likely that MBTA has not released schedule times for the date of your travel yet. Please check back soon.</p>');
 			}
 		});
 		fluShotLayerListener();
