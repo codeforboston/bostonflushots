@@ -53,9 +53,9 @@ function initialize() {
 	var RendererOptions = {
 		suppressInfoWindows: true,
 		polylineOptions: {
-			strokeColor:'#0954cf',
-			strokeWeight:'5',
-			strokeOpacity: '0.85'
+			strokeColor:config["stroke_color"],
+			strokeWeight:config["stroke_weight"],
+			strokeOpacity: config["stroke_opacity"]
 		}
 	};
 	// start up the google directions service and renderer

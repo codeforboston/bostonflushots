@@ -4,5 +4,8 @@ var config = {
     "default_lat": "42.33",
     "default_lng": "-71.05977",
     "initial_zoom": 11,
-    "map_style": "grey"
+    "map_style": "grey",
+    "stroke_color": "#0954cf",
+    "stroke_weight": "5",
+    "stroke_opacity": ".85"
 }
