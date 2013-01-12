@@ -114,8 +114,8 @@ function initialize() {
 				{
 					start: startDate,
 					end: endDate,
-					title: 'BPHC Free Flu Shot Event',
-					summary: 'BPHC Free Flu Shot Event',
+					title: config["cal_title"],
+					summary: config["cal_summary"],
 					description: description,
 					location: location,
 					iconSize: 0,
@@ -127,8 +127,8 @@ function initialize() {
 				{
 					start: startDate,
 					end: endDate,
-					title: 'BPHC Free Flu Shot Event',
-					summary: 'BPHC Free Flu Shot Event',
+					title: config["cal_title"],
+					summary: config["cal_summary"],
 					description: description,
 					location: location,
 					iconSize: 0,
