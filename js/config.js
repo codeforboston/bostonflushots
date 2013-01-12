@@ -3,6 +3,8 @@ var config = {
     "table_id": "1lCrp_Ee2AcV-fieOYf8Q2sHcDLesikoe42r_M6A",
     "default_lat": "42.33",
     "default_lng": "-71.05977",
+    "city":"Boston",
+    "state":"MA",
     "initial_zoom": 11,
     "map_style": "grey",
     "stroke_color": "#0954cf",

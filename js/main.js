@@ -233,7 +233,7 @@ function initialize() {
 		$('.day').removeClass('marked active');
 		var geocoder = new google.maps.Geocoder();
 		geocoder.geocode(
-			{address:$('#location').val()+', Boston, MA'},
+			{address:$('#location').val()+', ' + config["city"] + ', ' + config["state"]},
 			function(results, status)
 			{
 				if (status == google.maps.GeocoderStatus.OK)
