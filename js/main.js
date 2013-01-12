@@ -12,8 +12,8 @@ function initialize() {
 	{
 		var touch = Modernizr.touch;
 		var gps = navigator.geolocation;
-		var defaultLat = 42.33;
-		var defaultLng =  -71.05977;
+		var defaultLat = config["default_lat"];
+		var defaultLng =  config["default_lng"];
 		var locationMarker = null;
 		var eventSelected = false;
 		var Circle = null;
