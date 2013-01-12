@@ -11,5 +11,6 @@ var config = {
     "stroke_weight": "5",
     "stroke_opacity": ".85",
     "cal_title":"BPHC Free Flu Shot Event",
-    "cal_summary":"BPHC Free Flu Shot Event"
+    "cal_summary":"BPHC Free Flu Shot Event",
+    "transit_name":"MBTA"
 }
