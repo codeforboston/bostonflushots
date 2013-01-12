@@ -423,7 +423,7 @@ function initialize() {
 		}
 	});
 	/**
-	 * Listen for a the CTA route buttons
+	 * Listen for the route buttons
 	 */
 	$('.cta').click(function()
 	{
@@ -447,7 +447,7 @@ function initialize() {
 		$('#directions').html('');
 		DirectionsRenderer.setPanel(document.getElementById('directions'));
 		var RouteRequest = {
-			origin : $('#location').val()+', Boston, MA',
+			origin : $('#location').val()+', ' + config['city'] + ', ' + config['state'],
 			destination : lastFluShotLocationClicked.Location.value,
 			transitOptions : transitOptions,
 
@@ -478,11 +478,11 @@ function initialize() {
 				DirectionsRenderer.setDirections(Response);
 				if(buttonClicked == 'ctarouteevent')
 				{
-					$('#timetoleave').html('<b>MBTA Directions</b><br>Leave by '+Response.routes[transitroute].legs[0].departure_time.text+' on '+lastFluShotLocationClicked.Date.value+'</p>');
+					$('#timetoleave').html('<b>Directions</b><br>Leave by '+Response.routes[transitroute].legs[0].departure_time.text+' on '+lastFluShotLocationClicked.Date.value+'</p>');
 				}
 				else
 				{
-					$('#timetoleave').html('<b>MBTA Directions</b><br>Leave by '+Response.routes[transitroute].legs[0].departure_time.text+'</p>');
+					$('#timetoleave').html('<b>Directions</b><br>Leave by '+Response.routes[transitroute].legs[0].departure_time.text+'</p>');
 				}
 			}
 			else
@@ -493,8 +493,8 @@ function initialize() {
 				}
 				$('#theform').hide(750);
 				$('#span-cta').show(750);
-				$('#timetoleave').html('<p class="lead">MBTA Directions</p>');
-				$('#directions').html('<p><b>We are sorry. We cannot route you to this clinic.</b> It is likely that MBTA has not released schedule times for the date of your travel yet. Please check back soon.</p>');
+				$('#timetoleave').html('<p class="lead">Directions</p>');
+				$('#directions').html('<p><b>We are sorry. We cannot route you to this clinic.</b> It is likely that your local transit authority has not released schedule times for the date of your travel yet. Please check back soon.</p>');
 			}
 		});
 		fluShotLayerListener();
