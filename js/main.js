@@ -10,8 +10,6 @@ window.onload = loadScript;
 function initialize() {
 	var touch = Modernizr.touch;
 	var gps = navigator.geolocation;
-	var defaultLat = config["default_lat"];
-	var defaultLng =  config["default_lng"];
 	var locationMarker = null;
 	var eventSelected = false;
 	var Circle = null;
@@ -25,10 +23,10 @@ function initialize() {
 	var Map = new TkMap({
 		domid:'map',
 		init:true,
-		lat:defaultLat,
-		lng:defaultLng,
-		styles:'grey',
-		zoom:11
+		lat:config["default_lat"],
+		lng:config["default_lng"],
+		styles:config["map_style"],
+		zoom:config["initial_zoom"]
 	});
 	// Get today's date
 	var d = new Date();
