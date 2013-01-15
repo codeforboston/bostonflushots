@@ -8,17 +8,19 @@ function loadScript() {
 window.onload = loadScript;
 
 function initialize() {
-	var touch = Modernizr.touch;
-	var gps = navigator.geolocation;
-	var locationMarker = null;
-	var eventSelected = false;
-	var Circle = null;
-	var lastFluShotLocationClicked = null;
+	var touch = Modernizr.touch,
+		gps = navigator.geolocation,
+		locationMarker = null,
+		eventSelected = false,
+		Circle = null,
+		lastFluShotLocationClicked = null;
+
 	// If this is iframed, hide the footer.
 	if (window.frames.length != parent.frames.length)
 	{
 		$('#footer').hide();
 	}
+
 	// Render the map
 	var Map = new TkMap({
 		domid:'map',
@@ -28,21 +30,25 @@ function initialize() {
 		styles:config["map_style"],
 		zoom:config["initial_zoom"]
 	});
+
 	// Get today's date
-	var d = new Date();
-	var date = d.getDate();
-	//Months are zero based
-	var month = d.getMonth() + 1;
-	var year = d.getFullYear();
+	var d = new Date(),
+		date = d.getDate(),
+		month = d.getMonth() + 1, // zero-based
+		year = d.getFullYear();
+
 	// Get seven days from today
 	var d7 = new Date(d);
 	d7.setDate(d7.getDate()+7);
 	var date7 = d7.getDate();
+
 	//Months are zero based
 	var month7 = d7.getMonth() + 1;
 	var year7 = d7.getFullYear();
+
 	// Google FT likes dot-based dates
 	var defaultWhere = "Date >= '"+year +'.'+ (month<=9?'0'+month:month) +'.'+ (date<=9?'0'+date:date)+"'";
+	
 	// Render the Flu shot clinic locations on the map
 	var FluShotsLayer = new TkMapFusionLayer({
 		geo:'Location',
